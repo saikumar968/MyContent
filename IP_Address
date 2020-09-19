@@ -1,0 +1,13 @@
+import os
+from time import sleep
+
+os.system('cmd.exe /c ipconfig > output.txt')
+
+f=open('output.txt','r+')
+for i in f:
+   if "IPv4" in i:
+       k=i
+       p = k.split(":")
+print("Getting the IP Information...")
+sleep(2)
+print(p[-1].strip())
